@@ -13,6 +13,22 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 300)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        Dialog.setFont(font)
+        self.label = QtWidgets.QLabel(parent=Dialog)
+        self.label.setGeometry(QtCore.QRect(20, 10, 141, 16))
+        self.label.setObjectName("label")
+        self.nameEdit = QtWidgets.QLineEdit(parent=Dialog)
+        self.nameEdit.setGeometry(QtCore.QRect(20, 40, 361, 21))
+        self.nameEdit.setObjectName("nameEdit")
+        self.resultLabel = QtWidgets.QLabel(parent=Dialog)
+        self.resultLabel.setGeometry(QtCore.QRect(19, 109, 361, 61))
+        self.resultLabel.setText("")
+        self.resultLabel.setObjectName("resultLabel")
+        self.okButton = QtWidgets.QPushButton(parent=Dialog)
+        self.okButton.setGeometry(QtCore.QRect(270, 250, 113, 32))
+        self.okButton.setObjectName("okButton")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -20,3 +36,5 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label.setText(_translate("Dialog", "Podaj swoje imię: "))
+        self.okButton.setText(_translate("Dialog", "OK"))
